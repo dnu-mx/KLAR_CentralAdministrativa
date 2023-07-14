@@ -1,0 +1,246 @@
+﻿<md-dialog aria-label="dialog" flex="85" layout-fill>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 md-truncate>Pasos de {{producto.nombre}}</h2>
+            <span flex></span>
+
+            <!--
+
+            -->
+            
+            <md-button class="md-icon-button" ng-click="updateProductosCombos()" style="margin-right: 20px;">
+                <md-tooltip md-direction="bottom">Guardar</md-tooltip>
+                <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+            </md-button>
+
+            <md-button class="md-icon-button" ng-click="addStep()" style="margin-right: 20px;">
+                <md-tooltip md-direction="bottom">Agregar Paso</md-tooltip>
+                <md-icon md-svg-icon="plus" aria-label="Agregar"></md-icon>
+            </md-button>
+
+
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-tooltip md-direction="bottom">Cerrar</md-tooltip>
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+
+        </div>
+
+    </md-toolbar>
+
+    <md-dialog-content style="height: 100%">
+
+        <!--     <form name="baseDialogForm" layout-fill>-->
+
+
+
+        <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect layout-fill>
+            <md-tab ng-repeat="tab in pasos  | orderBy:'secuencia':reverse"
+                    ng-disabled="tab.disabled"
+                    label="{{tab.secuencia}}">
+
+
+                <!--<div layout="row">
+
+        </div>-->
+
+                <md-tab-body>
+                    
+                    
+                    <div layout="row">
+                        <!--<div ng-repeat="z in pasos  | orderBy:'secuencia':reverse">
+                            
+                            {{z.secuencia}}
+                        </div>-->
+
+
+
+                        <!--<md-input-container class="md-icon-float " flex="10">
+                    <md-icon md-svg-icon="numeric"></md-icon>
+                    <label> Secuencia</label>
+                    <input type="text" ng-model="tab.secuencia" ui-number-mask="0" name="secuencia" required>
+
+                    <div ng-messages="baseEditForm.secuencia.$error">
+                        <div ng-messages-include="message-template"></div>
+                    </div>
+                </md-input-container>-->
+
+
+                        <md-input-container class="md-icon-float " flex>
+                            <md-icon md-svg-icon="format-text"></md-icon>
+                            <label> Descripcion</label>
+                            <input type="text" ng-model="tab.descripcion" name="descripcion" required>
+
+                            <div ng-messages="baseEditForm.descripcion.$error">
+                                <div ng-messages-include="message-template"></div>
+                            </div>
+                        </md-input-container>
+
+
+
+
+                        <md-input-container class="md-icon-float ">
+                            <md-icon md-svg-icon="numeric"></md-icon>
+                            <label> Cantidad</label>
+                            <input type="text" ng-model="tab.cantidad" ui-number-mask="0" name="cantidad" required>
+
+                            <div ng-messages="baseEditForm.cantidad.$error">
+                                <div ng-messages-include="message-template"></div>
+                            </div>
+                        </md-input-container>
+                        
+                        
+
+
+                        <md-input-container class="md-icon-float ">
+                            <md-icon md-svg-icon="numeric"></md-icon>
+                            <label> Secuencia</label>
+                            <input type="text" ng-model="tab.secuencia" ui-number-mask="0" name="Secuencia" required>
+
+                            <div ng-messages="baseEditForm.secuencia.$error">
+                                <div ng-messages-include="message-template"></div>
+                            </div>
+                        </md-input-container>
+                        
+                        
+                        <md-button class="md-icon-button" ng-click="deleteStep(tab,$event)" style="margin-left: 30px; margin-right: 30px;">
+                            <md-tooltip md-direction="bottom">Eliminar Paso</md-tooltip>
+                            <md-icon md-svg-icon="delete" aria-label="Eliminar paso"></md-icon>
+                        </md-button>
+
+                    </div>
+
+
+                    <div layout="row">
+
+                        <span class="md-headline" flex="30" flex-offset="5">Productos </span>
+
+                        <md-autocomplete md-no-cache="true"
+                                         md-selected-item="selectedItem"
+                                         md-search-text-change="searchTextChange(searchText)"
+                                         md-search-text="searchText"
+                                         
+                                         md-items="item in querySearch(searchText)"
+                                         md-item-text="(item.Name)"
+                                         md-min-length="0"
+                                         md-selected-item-change="addProduct(selectedItem,tab)"
+                                         placeholder="Escoja un producto" flex style="margin-right: 15px;">
+
+                            <md-item-template>
+                                <span md-highlight-text="searchText" md-highlight-flags="^i">  {{item.Name}}</span>
+                            </md-item-template>
+                            <md-not-found>
+                                No se encontraron resultados del texto "{{searchText}}" .
+                                <!--<a ng-click="ctrl.newState(ctrl.searchText)"> {{item.Sku}}Create a new one!</a>-->
+                            </md-not-found>
+                            
+                        </md-autocomplete>
+
+
+                        <!--<md-button class="md-icon-button" ng-click="addProduct(selectedItem, tab)" style="margin-right: 35px;">
+                            <md-tooltip md-direction="top">Agregar producto</md-tooltip>
+                            <md-icon md-svg-icon="plus" aria-label="Agregar"></md-icon>
+                        </md-button>-->
+
+                    </div>
+
+                    <!--<div ng-repeat="pc in tab.ProductosCombos">
+
+                <br /> {{pc.NameProducto}} {{item.Sku}}
+            </div>-->
+
+                    <md-table-container style="overflow: auto; max-height: 55vh;">
+                        <table md-table>
+                            <caption></caption>
+
+
+                            <thead md-head fix-head>
+                                <tr md-row>
+
+                                    <th id="idProducto" md-column><span>Id Producto</span></th>
+                                    <th id="sku" md-column><span>Sku</span></th>
+                                    <th id="nombre" md-column><span>Nombre</span></th>
+                                    <th id="" md-column><span></span></th>
+
+
+
+
+                                </tr>
+                            </thead>
+                            <tbody md-body>
+
+                                <tr md-row ng-repeat="pc in tab.ProductosCombos">
+
+                                    <td md-cell>{{pc.id_producto}} </td>
+                                    <td md-cell>{{pc.SkuProducto}} </td>
+                                    <td md-cell>{{pc.NameProducto}} </td>
+
+                                    <td md-cell>
+
+                                        <!--<md-button class="md-icon-button" ng-click="edit(pc)">
+                                    <md-tooltip md-direction="top">Editar</md-tooltip>
+                                    <md-icon md-svg-icon="pencil" aria-label="Editar"></md-icon>
+                                </md-button>-->
+
+                                        <md-button class="md-icon-button" ng-click="deleteProduct(pc,tab,$event)">
+                                            <md-tooltip md-direction="left">Eliminar</md-tooltip>
+                                            <md-icon md-svg-icon="delete" aria-label="Eliminar"></md-icon>
+                                        </md-button>
+
+                                    </td>
+
+
+
+
+
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
+
+
+
+                    <!--<md-content layout-padding>
+                test
+            </md-content>-->
+
+                </md-tab-body>
+
+
+
+                <!--<div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+            <div ng-bind="tab.content"></div>
+            <br />
+            <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">Remove Tab</md-button>
+        </div>-->
+
+
+            </md-tab>
+        </md-tabs>
+
+
+
+
+        <!--</form>-->
+
+    </md-dialog-content>
+
+
+    <!--<md-dialog-actions>
+
+        <md-button class="md-icon-button" ng-click="updateProductosCombos(time)" style="margin-right: 20px;">
+            <md-tooltip md-direction="top">Guardar</md-tooltip>
+            <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+        </md-button>
+
+        <md-button ng-click="cancel()" style="margin-right:20px; margin-left: 10px;">
+            Cerrar
+        </md-button>
+    </md-dialog-actions>-->
+
+
+
+</md-dialog>

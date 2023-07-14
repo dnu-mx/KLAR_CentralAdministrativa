@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C6A9882-0FC6-408B-906C-52C9A25F649C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Empresarial</RootNamespace>
+    <AssemblyName>Empresarial</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\Resources\Dll\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web">
+      <HintPath>..\..\..\..\Resources\Dll\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DALAutorizador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71ea720b4bb9a277, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d6cb3b4184fcd8c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Dnu.AutorizadorParabiliaAzure">
+      <HintPath>..\..\..\..\Resources\Dll\Dnu.AutorizadorParabiliaAzure.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\..\..\..\Resources\Dll\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net">
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.DataAccess">
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.Definition">
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.Definition.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.Implement.Generic">
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.Implement.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.Loging">
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.Loging.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.Security">
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.SqlServerDataAccess">
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.SqlServerDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases">
+      <HintPath>..\..\..\..\Resources\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log_PCI">
+      <HintPath>..\..\..\..\Resources\Dll\Log_PCI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Azure.KeyVault.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.WebKey">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Azure.KeyVault.WebKey.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Resources\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuraciones.aspx" />
+    <Content Include="ReporteAltaYAniversariosTarjetas.aspx" />
+    <Content Include="ReporteConsolidadoTarjetas.aspx" />
+    <Content Include="ReporteDispersionesCuentasEje.aspx" />
+    <Content Include="ReporteMediosAcceso.aspx" />
+    <Content Include="ReporteResumenTransacciones.aspx" />
+    <Content Include="Reportes Personalizados\Diconsa\Img\diconsa.jpg" />
+    <Content Include="ReporteSaldosCuentasSubemisor.aspx" />
+    <Content Include="ReporteSaldosCuentasEje.aspx" />
+    <Content Include="ReporteSaldosCuentasEmisor.aspx" />
+    <Content Include="ReporteSaldosCuentaSTP.aspx" />
+    <Content Include="ReporteSaldosDiariosTarjetas.aspx" />
+    <Content Include="ReporteSaldosPorTarjeta.aspx" />
+    <Content Include="ReporteTarjetasActivadas.aspx" />
+    <Content Include="Rep_SaldoEnCuentasCadena.aspx" />
+    <Content Include="Rep_SaldoEnCuentasCadena2.aspx" />
+    <Content Include="Rep_SaldoEnMedioAccesoCuentas.aspx" />
+    <Content Include="SaldosGrupoComercial.aspx" />
+    <Content Include="SaldosCadenaComercial.aspx" />
+    <Content Include="SaldosAfiliacion.aspx" />
+    <Content Include="SaldosTerminal.aspx" />
+    <Content Include="SaldosSucursal.aspx" />
+    <Content Include="EstadosCuenta.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="GrupoComercial.aspx" />
+    <Content Include="PDF.aspx" />
+    <Content Include="SaldosEmpleado.aspx" />
+    <Content Include="SaldosEmpresa.aspx" />
+    <Content Include="Scripts\TimeOut.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="xslFiles\Csv.xsl" />
+    <Content Include="xslFiles\Excel.xsl" />
+    <Content Include="..\..\..\..\Resources\Dll\Newtonsoft_3_5\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>\Newtonsoft_3_5\Newtonsoft.Json.dll</Link>
+    </Content>
+    <Content Include="..\..\..\..\Resources\Dll\Newtonsoft_6\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>\Newtonsoft_6\Newtonsoft.Json.dll</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuraciones.aspx.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuraciones.aspx.designer.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetallePolizaCuenta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetallePolizaCuenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteAltaYAniversariosTarjetas.aspx.cs">
+      <DependentUpon>ReporteAltaYAniversariosTarjetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAltaYAniversariosTarjetas.aspx.designer.cs">
+      <DependentUpon>ReporteAltaYAniversariosTarjetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConsolidadoTarjetas.aspx.cs">
+      <DependentUpon>ReporteConsolidadoTarjetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteConsolidadoTarjetas.aspx.designer.cs">
+      <DependentUpon>ReporteConsolidadoTarjetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteDispersionesCuentasEje.aspx.cs">
+      <DependentUpon>ReporteDispersionesCuentasEje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteDispersionesCuentasEje.aspx.designer.cs">
+      <DependentUpon>ReporteDispersionesCuentasEje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMediosAcceso.aspx.cs">
+      <DependentUpon>ReporteMediosAcceso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteMediosAcceso.aspx.designer.cs">
+      <DependentUpon>ReporteMediosAcceso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteResumenTransacciones.aspx.cs">
+      <DependentUpon>ReporteResumenTransacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteResumenTransacciones.aspx.designer.cs">
+      <DependentUpon>ReporteResumenTransacciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes Personalizados\Diconsa\DetallePolizaCuenta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetallePolizaCuenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes Personalizados\Diconsa\EstadoCuenta.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoCuenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes Personalizados\Diconsa\SaldoCuentasConcentrado1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaldoCuentasConcentrado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentasSubemisor.aspx.cs">
+      <DependentUpon>ReporteSaldosCuentasSubemisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentasSubemisor.aspx.designer.cs">
+      <DependentUpon>ReporteSaldosCuentasSubemisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentasEje.aspx.cs">
+      <DependentUpon>ReporteSaldosCuentasEje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentasEje.aspx.designer.cs">
+      <DependentUpon>ReporteSaldosCuentasEje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentasEmisor.aspx.cs">
+      <DependentUpon>ReporteSaldosCuentasEmisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentasEmisor.aspx.designer.cs">
+      <DependentUpon>ReporteSaldosCuentasEmisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentaSTP.aspx.cs">
+      <DependentUpon>ReporteSaldosCuentaSTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosCuentaSTP.aspx.designer.cs">
+      <DependentUpon>ReporteSaldosCuentaSTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSaldosDiariosTarjetas.aspx.cs">
+      <DependentUpon>ReporteSaldosDiariosTarjetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosDiariosTarjetas.aspx.designer.cs">
+      <DependentUpon>ReporteSaldosDiariosTarjetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSaldosPorTarjeta.aspx.cs">
+      <DependentUpon>ReporteSaldosPorTarjeta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSaldosPorTarjeta.aspx.designer.cs">
+      <DependentUpon>ReporteSaldosPorTarjeta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteTarjetasActivadas.aspx.cs">
+      <DependentUpon>ReporteTarjetasActivadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteTarjetasActivadas.aspx.designer.cs">
+      <DependentUpon>ReporteTarjetasActivadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rep_SaldoEnCuentasCadena.aspx.cs">
+      <DependentUpon>Rep_SaldoEnCuentasCadena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rep_SaldoEnCuentasCadena.aspx.designer.cs">
+      <DependentUpon>Rep_SaldoEnCuentasCadena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rep_SaldoEnCuentasCadena2.aspx.cs">
+      <DependentUpon>Rep_SaldoEnCuentasCadena2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rep_SaldoEnCuentasCadena2.aspx.designer.cs">
+      <DependentUpon>Rep_SaldoEnCuentasCadena2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rep_SaldoEnMedioAccesoCuentas.aspx.cs">
+      <DependentUpon>Rep_SaldoEnMedioAccesoCuentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rep_SaldoEnMedioAccesoCuentas.aspx.designer.cs">
+      <DependentUpon>Rep_SaldoEnMedioAccesoCuentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldoCuentasConcentrado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SaldoCuentasConcentrado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SaldosGrupoComercial.aspx.cs">
+      <DependentUpon>SaldosGrupoComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosGrupoComercial.aspx.designer.cs">
+      <DependentUpon>SaldosGrupoComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldosCadenaComercial.aspx.cs">
+      <DependentUpon>SaldosCadenaComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosCadenaComercial.aspx.designer.cs">
+      <DependentUpon>SaldosCadenaComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldosAfiliacion.aspx.cs">
+      <DependentUpon>SaldosAfiliacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosAfiliacion.aspx.designer.cs">
+      <DependentUpon>SaldosAfiliacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldosTerminal.aspx.cs">
+      <DependentUpon>SaldosTerminal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosTerminal.aspx.designer.cs">
+      <DependentUpon>SaldosTerminal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldosSucursal.aspx.cs">
+      <DependentUpon>SaldosSucursal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosSucursal.aspx.designer.cs">
+      <DependentUpon>SaldosSucursal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoCuenta.cs">
+      <DependentUpon>EstadoCuenta.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="EstadosCuenta.aspx.cs">
+      <DependentUpon>EstadosCuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EstadosCuenta.aspx.designer.cs">
+      <DependentUpon>EstadosCuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GrupoComercial.aspx.cs">
+      <DependentUpon>GrupoComercial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GrupoComercial.aspx.designer.cs">
+      <DependentUpon>GrupoComercial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PDF.aspx.cs">
+      <DependentUpon>PDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDF.aspx.designer.cs">
+      <DependentUpon>PDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaldosEmpleado.aspx.cs">
+      <DependentUpon>SaldosEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosEmpleado.aspx.designer.cs">
+      <DependentUpon>SaldosEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SaldosEmpresa.aspx.cs">
+      <DependentUpon>SaldosEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaldosEmpresa.aspx.designer.cs">
+      <DependentUpon>SaldosEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALAdministracion\DALAdministracion.csproj">
+      <Project>{7bfc3f74-7753-4fbe-b315-c0a15390c298}</Project>
+      <Name>DALAdministracion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALCortador\DALEventos.csproj">
+      <Project>{6D5B4BB2-16BF-4751-B45B-6B0FCA77C525}</Project>
+      <Name>DALEventos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Plugins\Utilerias\Utilerias.csproj">
+      <Project>{57f9253c-b4b7-45ac-bc3b-0e1f133a1dec}</Project>
+      <Name>Utilerias</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DetallePolizaCuenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DetallePolizaCuenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstadoCuenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoCuenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes Personalizados\Diconsa\DetallePolizaCuenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DetallePolizaCuenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes Personalizados\Diconsa\EstadoCuenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoCuenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes Personalizados\Diconsa\SaldoCuentasConcentrado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaldoCuentasConcentrado1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaldoCuentasConcentrado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaldoCuentasConcentrado.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>41990</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CentralAdministrativa_QA/Empresarial</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

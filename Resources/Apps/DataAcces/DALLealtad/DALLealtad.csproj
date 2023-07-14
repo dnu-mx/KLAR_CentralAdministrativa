@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00F2B827-EFA0-436E-B324-601F51D392AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DALLealtad</RootNamespace>
+    <AssemblyName>DALLealtad</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DALAutorizador">
+      <HintPath>..\..\..\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones">
+      <HintPath>..\..\..\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases">
+      <HintPath>..\..\..\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDatos\BDAdminPromociones.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorCash.cs" />
+    <Compile Include="BaseDatos\BDEcommerce.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCCIMEF.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCuponClick.cs" />
+    <Compile Include="BaseDatos\BDEcommerceEdenred.cs" />
+    <Compile Include="BaseDatos\BDEcommerceEdoMex.cs" />
+    <Compile Include="BaseDatos\BDEcommercePrana.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCertificados.cs" />
+    <Compile Include="BaseDatos\BDEcommerceRedVoucherCinemex.cs" />
+    <Compile Include="BaseDatos\BDEcommerceRedVoucherMC.cs" />
+    <Compile Include="BaseDatos\BDEcommerceRedVoucher.cs" />
+    <Compile Include="BaseDatos\BDEcommerceSams.cs" />
+    <Compile Include="BaseDatos\DAOCash.cs" />
+    <Compile Include="BaseDatos\DAOEcommerce.cs" />
+    <Compile Include="BaseDatos\DAOCertificadosAmazon.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceCCIMEF.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceEdenred.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceEdoMex.cs" />
+    <Compile Include="BaseDatos\DAOEcommercePrana.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceCertificados.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceCuponClick.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceRedVoucher.cs" />
+    <Compile Include="BaseDatos\DAOEcommerceSams.cs" />
+    <Compile Include="BaseDatos\DAOMoshi.cs" />
+    <Compile Include="BaseDatos\DAOPromociones.cs" />
+    <Compile Include="BaseDatos\DAOReglasLealtad.cs" />
+    <Compile Include="Entidades\Cadena.cs" />
+    <Compile Include="Entidades\CadenaComboPredictivo.cs" />
+    <Compile Include="Entidades\ObjetoPrograma.cs" />
+    <Compile Include="Entidades\Campana.cs" />
+    <Compile Include="Entidades\Cupon.cs" />
+    <Compile Include="Entidades\Programa.cs" />
+    <Compile Include="Entidades\Promocion.cs" />
+    <Compile Include="Entidades\SubGiro.cs" />
+    <Compile Include="Entidades\Sucursal.cs" />
+    <Compile Include="LogicaNegocio\LNCash.cs" />
+    <Compile Include="LogicaNegocio\LNConexionFTP.cs" />
+    <Compile Include="LogicaNegocio\LNEcommerceCCIMEF.cs" />
+    <Compile Include="LogicaNegocio\LNEcommerceCuponClick.cs" />
+    <Compile Include="LogicaNegocio\LNEcommerceRedVoucher.cs" />
+    <Compile Include="LogicaNegocio\LNEcommerce.cs" />
+    <Compile Include="LogicaNegocio\LNEcommerceEdenred.cs" />
+    <Compile Include="LogicaNegocio\LNEcommercePrana.cs" />
+    <Compile Include="LogicaNegocio\LNEcommerceSams.cs" />
+    <Compile Include="LogicaNegocio\LNMoshi.cs" />
+    <Compile Include="LogicaNegocio\LNPromociones.cs" />
+    <Compile Include="LogicaNegocio\LNReglasLealtad.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Logueo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

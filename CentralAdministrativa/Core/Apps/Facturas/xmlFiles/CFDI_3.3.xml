@@ -1,0 +1,10 @@
+﻿<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Sello="" Serie="" Folio="" Fecha="" FormaPago="" NoCertificado="" Certificado="" SubTotal="" Total="" MetodoPago="" TipoDeComprobante="" TipoCambio="1" Moneda="MXN" LugarExpedicion="">
+  <cfdi:Emisor Rfc="" Nombre="" RegimenFiscal="" />
+  <cfdi:Receptor Rfc="" Nombre="" UsoCFDI="" />
+  <cfdi:Conceptos></cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="">
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="" />
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+</cfdi:Comprobante>

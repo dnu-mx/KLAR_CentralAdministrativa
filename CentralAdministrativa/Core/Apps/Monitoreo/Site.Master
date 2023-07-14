@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Monitoreo.SiteMaster" %>
+
+
+<%@ Import Namespace="Panel=Ext.Net.Panel" %>
+<%@ Register Assembly="Ext.Net" Namespace="Ext.Net" TagPrefix="ext" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <%--<script type="text/javascript" src="../scripts/TimeOut.js"></script>--%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page2">
+         <asp:ScriptManager ID="smDetail" EnableScriptLocalization="true" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="Scripts/TimeOut.js" />
+            </Scripts>
+        </asp:ScriptManager>
+        <ext:ResourceManager ID="ResourceManager2" runat="server" Locale="es-MX">
+            <Listeners>
+                <DocumentReady Handler="detailTimeOut();" />
+            </Listeners>
+        </ext:ResourceManager>
+        
+        <ext:Viewport ID="Viewport1" runat="server" Layout="border">
+            <Items>
+                <ext:BorderLayout ID="BorderLayout1" runat="server">
+                    <Center>
+                        <ext:Panel ID="paginas" runat="server" Border="false" EnableTabScroll="true">
+                            <Content>
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" Visible="true">
+                                </asp:ContentPlaceHolder>
+                            </Content>
+                        </ext:Panel>
+                    </Center>
+                </ext:BorderLayout>
+            </Items>
+        </ext:Viewport>
+    </div>
+    </form>
+</body>
+</html>
+

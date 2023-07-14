@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{81E18447-EA66-4F16-8A51-768A0EC10B8B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CentroContacto</RootNamespace>
+    <AssemblyName>CentroContacto</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\Resources\Dll\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DALAutorizador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71ea720b4bb9a277, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d6cb3b4184fcd8c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Dnu.AutorizadorParabiliaAzure">
+      <HintPath>..\..\..\..\Resources\Dll\Dnu.AutorizadorParabiliaAzure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net">
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd90fa6d75606473, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.Definition, Version=2.0.0.0, Culture=neutral, PublicKeyToken=36c67c3212712bd3">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.Definition.dll</HintPath>
+    </Reference>
+    <Reference Include="FreezeCode.IceCubes.Implement.Generic, Version=2.0.0.0, Culture=neutral, PublicKeyToken=36c67c3212712bd3">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\FreezeCode.IceCubes.Implement.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=19fbb44e554115c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log_PCI">
+      <HintPath>..\..\..\..\Resources\Dll\Log_PCI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\RestSharp.105.2.3\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>..\..\..\..\..\Windows\Microsoft.NET\Framework\v4.0.30319\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConsultaClientes.aspx" />
+    <Content Include="ConsultaClientesCash.aspx" />
+    <Content Include="ConsultaClientesMoshi.aspx" />
+    <Content Include="ConsultaClientesTarjetas.aspx" />
+    <Content Include="ConsultaClientesTeleVIP.aspx" />
+    <Content Include="ConsultaClientes_StarCinema.aspx" />
+    <Content Include="ConsultaClientes_Vanguardia.aspx" />
+    <Content Include="ConsultaClientes_Yaavz.aspx" />
+    <Content Include="ConsultaClientes_Previmed.aspx" />
+    <Content Include="ConsultaClientes_CuponClick.aspx" />
+    <Content Include="ConsultaClientes_CCIMEF.aspx" />
+    <Content Include="ConsultaClientes_Sams.aspx" />
+    <Content Include="ConsultaClientes_SmartTicket.aspx" />
+    <Content Include="ConsultaClientes_SmartTicketCinemex.aspx" />
+    <Content Include="ConsultaClientes_SmartTicketMC.aspx" />
+    <Content Include="ConsultaTarjetas_SmartTicket.aspx" />
+    <Content Include="ConsultaTarjetas_SmartTicketCinemex.aspx" />
+    <Content Include="ConsultaTarjetas_SmartTicketMC.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="ProgramaPrecalculoCash.aspx" />
+    <Content Include="RegistraMonitoreo.aspx" />
+    <Content Include="RelacionUsuarioEmpresa.aspx" />
+    <Content Include="Reporte_ClientesCuponClick.aspx" />
+    <Content Include="Reporte_ClientesParco.aspx" />
+    <Content Include="Reporte_LlamadasTarjetahabientes.aspx" />
+    <Content Include="Reporte_Monitoreo.aspx" />
+    <Content Include="Reporte_ClientesCash.aspx" />
+    <Content Include="Reporte_Clientes_v2.aspx" />
+    <Content Include="Reporte_Lealtad.aspx" />
+    <Content Include="Reporte_LealtadCash.aspx" />
+    <Content Include="Reporte_Pedidos.aspx" />
+    <Content Include="Reporte_GrupoReportes.aspx" />
+    <Content Include="Reporte_Actividades.aspx" />
+    <Content Include="Reporte_Beneficios.aspx" />
+    <Content Include="Reporte_Clientes.aspx" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reporte_Llamadas.aspx" />
+    <Content Include="Reporte_LlamadasTiendasDiconsa.aspx" />
+    <Content Include="Reporte_Operaciones.aspx" />
+    <Content Include="Reporte_Tiempos_Reparto.aspx" />
+    <Content Include="Scripts\TimeOut.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="TiendasDiconsa.aspx" />
+    <Content Include="ValidacionMembresias_Sams.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="..\..\..\..\Resources\Dll\Newtonsoft_3_5\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>\Newtonsoft_3_5\Newtonsoft.Json.dll</Link>
+    </Content>
+    <Content Include="..\..\..\..\Resources\Dll\Newtonsoft_6\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>\Newtonsoft_6\Newtonsoft.Json.dll</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsultaClientes.aspx.cs">
+      <DependentUpon>ConsultaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientesCash.aspx.cs">
+      <DependentUpon>ConsultaClientesCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientesCash.aspx.designer.cs">
+      <DependentUpon>ConsultaClientesCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientesMoshi.aspx.cs">
+      <DependentUpon>ConsultaClientesMoshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientesMoshi.aspx.designer.cs">
+      <DependentUpon>ConsultaClientesMoshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientesTeleVIP.aspx.cs">
+      <DependentUpon>ConsultaClientesTeleVIP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientesTeleVIP.aspx.designer.cs">
+      <DependentUpon>ConsultaClientesTeleVIP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_StarCinema.aspx.cs">
+      <DependentUpon>ConsultaClientes_StarCinema.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_StarCinema.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_StarCinema.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientesTarjetas.aspx.cs">
+      <DependentUpon>ConsultaClientesTarjetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientesTarjetas.aspx.designer.cs">
+      <DependentUpon>ConsultaClientesTarjetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_Vanguardia.aspx.cs">
+      <DependentUpon>ConsultaClientes_Vanguardia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_Vanguardia.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_Vanguardia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_Yaavz.aspx.cs">
+      <DependentUpon>ConsultaClientes_Yaavz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_Yaavz.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_Yaavz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_Previmed.aspx.cs">
+      <DependentUpon>ConsultaClientes_Previmed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_Previmed.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_Previmed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_CuponClick.aspx.cs">
+      <DependentUpon>ConsultaClientes_CuponClick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_CuponClick.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_CuponClick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_CCIMEF.aspx.cs">
+      <DependentUpon>ConsultaClientes_CCIMEF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_CCIMEF.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_CCIMEF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_Sams.aspx.cs">
+      <DependentUpon>ConsultaClientes_Sams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_Sams.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_Sams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_SmartTicket.aspx.cs">
+      <DependentUpon>ConsultaClientes_SmartTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_SmartTicket.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_SmartTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_SmartTicketCinemex.aspx.cs">
+      <DependentUpon>ConsultaClientes_SmartTicketCinemex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_SmartTicketCinemex.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_SmartTicketCinemex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaClientes_SmartTicketMC.aspx.cs">
+      <DependentUpon>ConsultaClientes_SmartTicketMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaClientes_SmartTicketMC.aspx.designer.cs">
+      <DependentUpon>ConsultaClientes_SmartTicketMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTarjetas_SmartTicket.aspx.cs">
+      <DependentUpon>ConsultaTarjetas_SmartTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTarjetas_SmartTicket.aspx.designer.cs">
+      <DependentUpon>ConsultaTarjetas_SmartTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTarjetas_SmartTicketCinemex.aspx.cs">
+      <DependentUpon>ConsultaTarjetas_SmartTicketCinemex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTarjetas_SmartTicketCinemex.aspx.designer.cs">
+      <DependentUpon>ConsultaTarjetas_SmartTicketCinemex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTarjetas_SmartTicketMC.aspx.cs">
+      <DependentUpon>ConsultaTarjetas_SmartTicketMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTarjetas_SmartTicketMC.aspx.designer.cs">
+      <DependentUpon>ConsultaTarjetas_SmartTicketMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramaPrecalculoCash.aspx.cs">
+      <DependentUpon>ProgramaPrecalculoCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProgramaPrecalculoCash.aspx.designer.cs">
+      <DependentUpon>ProgramaPrecalculoCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistraMonitoreo.aspx.cs">
+      <DependentUpon>RegistraMonitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistraMonitoreo.aspx.designer.cs">
+      <DependentUpon>RegistraMonitoreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RelacionUsuarioEmpresa.aspx.cs">
+      <DependentUpon>RelacionUsuarioEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RelacionUsuarioEmpresa.aspx.designer.cs">
+      <DependentUpon>RelacionUsuarioEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_ClientesCuponClick.aspx.cs">
+      <DependentUpon>Reporte_ClientesCuponClick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_ClientesCuponClick.aspx.designer.cs">
+      <DependentUpon>Reporte_ClientesCuponClick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_ClientesParco.aspx.cs">
+      <DependentUpon>Reporte_ClientesParco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_ClientesParco.aspx.designer.cs">
+      <DependentUpon>Reporte_ClientesParco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_LlamadasTarjetahabientes.aspx.cs">
+      <DependentUpon>Reporte_LlamadasTarjetahabientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_LlamadasTarjetahabientes.aspx.designer.cs">
+      <DependentUpon>Reporte_LlamadasTarjetahabientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Monitoreo.aspx.cs">
+      <DependentUpon>Reporte_Monitoreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Monitoreo.aspx.designer.cs">
+      <DependentUpon>Reporte_Monitoreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Actividades.aspx.cs">
+      <DependentUpon>Reporte_Actividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Actividades.aspx.designer.cs">
+      <DependentUpon>Reporte_Actividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_ClientesCash.aspx.cs">
+      <DependentUpon>Reporte_ClientesCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_ClientesCash.aspx.designer.cs">
+      <DependentUpon>Reporte_ClientesCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Clientes_v2.aspx.cs">
+      <DependentUpon>Reporte_Clientes_v2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Clientes_v2.aspx.designer.cs">
+      <DependentUpon>Reporte_Clientes_v2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Lealtad.aspx.cs">
+      <DependentUpon>Reporte_Lealtad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Lealtad.aspx.designer.cs">
+      <DependentUpon>Reporte_Lealtad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_LealtadCash.aspx.cs">
+      <DependentUpon>Reporte_LealtadCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_LealtadCash.aspx.designer.cs">
+      <DependentUpon>Reporte_LealtadCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Pedidos.aspx.cs">
+      <DependentUpon>Reporte_Pedidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Pedidos.aspx.designer.cs">
+      <DependentUpon>Reporte_Pedidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Beneficios.aspx.cs">
+      <DependentUpon>Reporte_Beneficios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Beneficios.aspx.designer.cs">
+      <DependentUpon>Reporte_Beneficios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Clientes.aspx.cs">
+      <DependentUpon>Reporte_Clientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Clientes.aspx.designer.cs">
+      <DependentUpon>Reporte_Clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_GrupoReportes.aspx.cs">
+      <DependentUpon>Reporte_GrupoReportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_GrupoReportes.aspx.designer.cs">
+      <DependentUpon>Reporte_GrupoReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Llamadas.aspx.cs">
+      <DependentUpon>Reporte_Llamadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Llamadas.aspx.designer.cs">
+      <DependentUpon>Reporte_Llamadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_LlamadasTiendasDiconsa.aspx.cs">
+      <DependentUpon>Reporte_LlamadasTiendasDiconsa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_LlamadasTiendasDiconsa.aspx.designer.cs">
+      <DependentUpon>Reporte_LlamadasTiendasDiconsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Operaciones.aspx.cs">
+      <DependentUpon>Reporte_Operaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Operaciones.aspx.designer.cs">
+      <DependentUpon>Reporte_Operaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Tiempos_Reparto.aspx.cs">
+      <DependentUpon>Reporte_Tiempos_Reparto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_Tiempos_Reparto.aspx.designer.cs">
+      <DependentUpon>Reporte_Tiempos_Reparto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TiendasDiconsa.aspx.cs">
+      <DependentUpon>TiendasDiconsa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TiendasDiconsa.aspx.designer.cs">
+      <DependentUpon>TiendasDiconsa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidacionMembresias_Sams.aspx.cs">
+      <DependentUpon>ValidacionMembresias_Sams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ValidacionMembresias_Sams.aspx.designer.cs">
+      <DependentUpon>ValidacionMembresias_Sams.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALAdministracion\DALAdministracion.csproj">
+      <Project>{7BFC3F74-7753-4FBE-B315-C0A15390C298}</Project>
+      <Name>DALAdministracion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALCortador\DALEventos.csproj">
+      <Project>{6D5B4BB2-16BF-4751-B45B-6B0FCA77C525}</Project>
+      <Name>DALEventos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALLoyalty\DALCentroContacto.csproj">
+      <Project>{2e314ca6-f34e-4ec9-97d4-c7b06961a33b}</Project>
+      <Name>DALCentroContacto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Plugins\Utilerias\Utilerias.csproj">
+      <Project>{57F9253C-B4B7-45AC-BC3B-0E1F133A1DEC}</Project>
+      <Name>Utilerias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Plugins\WebServices\WebServices.csproj">
+      <Project>{CAADE002-4A8D-43D9-B049-125DD09B5824}</Project>
+      <Name>WebServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>48452</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CentralAdministrativa_QA/Loyalty</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

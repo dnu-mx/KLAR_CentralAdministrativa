@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://CatalogosAut/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="WS_CatalogosAUTService" targetNamespace="http://CatalogosAut/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://luisdelatorre:8080/WS_CatalogosAutorizador/WS_CatalogosAUTService?xsd=1" namespace="http://CatalogosAut/" />
+    </xsd:schema>
+  </types>
+  <message name="ObtieneCuentasUsuario">
+    <part name="parameters" element="tns:ObtieneCuentasUsuario" />
+  </message>
+  <message name="ObtieneCuentasUsuarioResponse">
+    <part name="parameters" element="tns:ObtieneCuentasUsuarioResponse" />
+  </message>
+  <portType name="WS_CatalogosAUT">
+    <operation name="ObtieneCuentasUsuario">
+      <input wsam:Action="http://CatalogosAut/WS_CatalogosAUT/ObtieneCuentasUsuarioRequest" message="tns:ObtieneCuentasUsuario" />
+      <output wsam:Action="http://CatalogosAut/WS_CatalogosAUT/ObtieneCuentasUsuarioResponse" message="tns:ObtieneCuentasUsuarioResponse" />
+    </operation>
+  </portType>
+  <binding name="WS_CatalogosAUTPortBinding" type="tns:WS_CatalogosAUT">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ObtieneCuentasUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WS_CatalogosAUTService">
+    <port name="WS_CatalogosAUTPort" binding="tns:WS_CatalogosAUTPortBinding">
+      <soap:address location="http://luisdelatorre:8080/WS_CatalogosAutorizador/WS_CatalogosAUTService" />
+    </port>
+  </service>
+</definitions>

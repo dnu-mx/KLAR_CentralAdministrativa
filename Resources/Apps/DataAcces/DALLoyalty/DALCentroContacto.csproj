@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E314CA6-F34E-4EC9-97D4-C7B06961A33B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DALCentroContacto</RootNamespace>
+    <AssemblyName>DALCentroContacto</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DALAutorizador">
+      <HintPath>..\..\..\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones">
+      <HintPath>..\..\..\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Executer">
+      <HintPath>..\..\..\Dll\Executer.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases">
+      <HintPath>..\..\..\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log_PCI">
+      <HintPath>..\..\..\Dll\Log_PCI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\Dll\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\Dll\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDatos\BDAdminEcommerceStarCinema.cs" />
+    <Compile Include="BaseDatos\BDAdminVanguardia.cs" />
+    <Compile Include="BaseDatos\BDAdminYaavz.cs" />
+    <Compile Include="BaseDatos\BDAdminPrevimed.cs" />
+    <Compile Include="BaseDatos\BDAdminCuponClick.cs" />
+    <Compile Include="BaseDatos\BDAdminEcommerceCinemex.cs" />
+    <Compile Include="BaseDatos\BDAdminEcommerceMC.cs" />
+    <Compile Include="BaseDatos\BDAdminCCIMEF.cs" />
+    <Compile Include="BaseDatos\BDAdminPromociones.cs" />
+    <Compile Include="BaseDatos\BDAppConnect.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorStarCinema.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorVanguardia.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorYaavz.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorPrevimed.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorCuponClick.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorCCIMEF.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorPromociones.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorRedVoucher.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorCash.cs" />
+    <Compile Include="BaseDatos\BDAdminEcommerce.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorRedVoucherCinemex.cs" />
+    <Compile Include="BaseDatos\BDAutorizadorRedVoucherMC.cs" />
+    <Compile Include="BaseDatos\BDEcommerceStarCinema.cs" />
+    <Compile Include="BaseDatos\BDEcommerce.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCash.cs" />
+    <Compile Include="BaseDatos\BDEcommerceVanguardia.cs" />
+    <Compile Include="BaseDatos\BDEcommerceYaavz.cs" />
+    <Compile Include="BaseDatos\BDEcommercePrevimed.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCuponClick.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCCIMEF.cs" />
+    <Compile Include="BaseDatos\BDEcommerceCinemex.cs" />
+    <Compile Include="BaseDatos\BDEcommerceMC.cs" />
+    <Compile Include="BaseDatos\BDEcommerceParco.cs" />
+    <Compile Include="BaseDatos\BDEcommercePrana.cs" />
+    <Compile Include="BaseDatos\DAOBitacoraActividades.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientes.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesCash.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesStarCinema.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesVanguardia.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesYaavz.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesPrevimed.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesCuponClick.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesCCIMEF.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesSams.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesSmartTicket.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesMoshi.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesSmartTicketCinemex.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesSmartTicketMC.cs" />
+    <Compile Include="BaseDatos\DAOConsultaClientesTeleVIP.cs" />
+    <Compile Include="BaseDatos\DAOConsultaTarjetasSmartTicket.cs" />
+    <Compile Include="BaseDatos\DAOConsultaTarjetasSmartTicketCinemex.cs" />
+    <Compile Include="BaseDatos\DAOConsultaTarjetasSmartTicketMC.cs" />
+    <Compile Include="BaseDatos\DAOMonitoreo.cs" />
+    <Compile Include="BaseDatos\DAOPrecalculoPuntosCash.cs" />
+    <Compile Include="BaseDatos\DAOTiendasDiconsa.cs" />
+    <Compile Include="BaseDatos\DAOReportes.cs" />
+    <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\ClienteColectiva.cs" />
+    <Compile Include="Entidades\EventosManuales.cs" />
+    <Compile Include="Entidades\RegistroLlamada.cs" />
+    <Compile Include="Entidades\ReporteCliente.cs" />
+    <Compile Include="Entidades\TiendaDiconsa.cs" />
+    <Compile Include="Entidades\WSJsonResponses.cs" />
+    <Compile Include="LogicaNegocio\LNAppConnect.cs" />
+    <Compile Include="LogicaNegocio\LNCash.cs" />
+    <Compile Include="LogicaNegocio\LNClientes.cs" />
+    <Compile Include="LogicaNegocio\LNClientesStarCinema.cs" />
+    <Compile Include="LogicaNegocio\LNClientesVanguardia.cs" />
+    <Compile Include="LogicaNegocio\LNClientesYaavz.cs" />
+    <Compile Include="LogicaNegocio\LNClientesPrevimed.cs" />
+    <Compile Include="LogicaNegocio\LNClientesCuponClick.cs" />
+    <Compile Include="LogicaNegocio\LNClientesCCIMEF.cs" />
+    <Compile Include="LogicaNegocio\LNClientesSams.cs" />
+    <Compile Include="LogicaNegocio\LNClientesSmartTicketCinemex.cs" />
+    <Compile Include="LogicaNegocio\LNClientesSmartTicketMC.cs" />
+    <Compile Include="LogicaNegocio\LNClientesTeleVIP.cs" />
+    <Compile Include="LogicaNegocio\LNClientesSmartTicket.cs" />
+    <Compile Include="LogicaNegocio\LNMoshi.cs" />
+    <Compile Include="LogicaNegocio\LNReportes.cs" />
+    <Compile Include="LogicaNegocio\LNTarjetasSmartTicket.cs" />
+    <Compile Include="LogicaNegocio\LNTarjetasSmartTicketCinemex.cs" />
+    <Compile Include="LogicaNegocio\LNTarjetasSmartTicketMC.cs" />
+    <Compile Include="LogicaNegocio\LNTiendasDiconsa.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Logueo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Plugins\Utilerias\Utilerias.csproj">
+      <Project>{57F9253C-B4B7-45AC-BC3B-0E1F133A1DEC}</Project>
+      <Name>Utilerias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Plugins\WebServices\WebServices.csproj">
+      <Project>{caade002-4a8d-43d9-b049-125dd09b5824}</Project>
+      <Name>WebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALAdministracion\DALAdministracion.csproj">
+      <Project>{7BFC3F74-7753-4FBE-B315-C0A15390C298}</Project>
+      <Name>DALAdministracion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

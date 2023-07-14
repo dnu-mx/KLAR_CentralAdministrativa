@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E70DB64-FBDF-4A4C-916D-9F2F1B9348B1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ValidacionesBatch</RootNamespace>
+    <AssemblyName>ValidacionesBatch</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.89.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\ClosedXML.0.89.0\lib\net452\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DALAutorizador, Version=1.0.0.0, Culture=neutral, PublicKeyToken=71ea720b4bb9a277, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d6cb3b4184fcd8c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net, Version=1.2.0.21133, Culture=neutral, PublicKeyToken=2e12ce3d0176cd87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities, Version=1.1.0.21129, Culture=neutral, PublicKeyToken=2c34ac34702a3c23, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=19fbb44e554115c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AdministracionReglasEFV.aspx" />
+    <Content Include="ArchivosRecibidos.aspx" />
+    <Content Include="ChartsEfectivale.aspx" />
+    <Content Include="Configuraciones.aspx" />
+    <Content Include="ConfiguracionRegla.aspx" />
+    <Content Include="ConsultaIncidencias.aspx" />
+    <Content Include="ConsultaIncidenciasVG.aspx" />
+    <Content Include="ConsultaOperaciones.aspx" />
+    <Content Include="ConsultaOperacionesGas.aspx" />
+    <Content Include="ConsultaTarjetasGasEFV.aspx" />
+    <Content Include="ConsultaTarjetasVG.aspx" />
+    <Content Include="Images\promo.png" />
+    <Content Include="MasterAngular.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="ImportarListaNegraComercios.aspx" />
+    <Content Include="ImportarListaNegraTarjetas.aspx" />
+    <Content Include="MayoresPromedioPorGiro.aspx" />
+    <Content Include="MultiplesGirosenUnMes.aspx" />
+    <Content Include="MultiplesOperacionesConsumoTotalSaldo.aspx" />
+    <Content Include="MultiplesOperacionesEnPeriodo.aspx" />
+    <Content Include="OperacionesListaNegra.aspx" />
+    <Content Include="OperacionesListaNegraComercios.aspx" />
+    <Content Include="OperacionesMayores.aspx" />
+    <Content Include="OperacionesMayoresPorcentajeSaldo.aspx" />
+    <Content Include="OperacionesRechazadas.aspx" />
+    <Content Include="RechazosEnCortoTiempo.aspx" />
+    <Content Include="Regla_8004_MontoAcumuladoPorPeriodo.aspx" />
+    <Content Include="Regla_8008_FueraZonaGeografica.aspx" />
+    <Content Include="Reporte_CasosEFV.aspx" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\TimeOut.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdministracionReglasEFV.aspx.cs">
+      <DependentUpon>AdministracionReglasEFV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionReglasEFV.aspx.designer.cs">
+      <DependentUpon>AdministracionReglasEFV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ArchivosRecibidos.aspx.cs">
+      <DependentUpon>ArchivosRecibidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArchivosRecibidos.aspx.designer.cs">
+      <DependentUpon>ArchivosRecibidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChartsEfectivale.aspx.cs">
+      <DependentUpon>ChartsEfectivale.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChartsEfectivale.aspx.designer.cs">
+      <DependentUpon>ChartsEfectivale.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuraciones.aspx.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuraciones.aspx.designer.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionRegla.aspx.cs">
+      <DependentUpon>ConfiguracionRegla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfiguracionRegla.aspx.designer.cs">
+      <DependentUpon>ConfiguracionRegla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaIncidencias.aspx.cs">
+      <DependentUpon>ConsultaIncidencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaIncidencias.aspx.designer.cs">
+      <DependentUpon>ConsultaIncidencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaIncidenciasVG.aspx.cs">
+      <DependentUpon>ConsultaIncidenciasVG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaIncidenciasVG.aspx.designer.cs">
+      <DependentUpon>ConsultaIncidenciasVG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaOperaciones.aspx.cs">
+      <DependentUpon>ConsultaOperaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaOperaciones.aspx.designer.cs">
+      <DependentUpon>ConsultaOperaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaOperacionesGas.aspx.cs">
+      <DependentUpon>ConsultaOperacionesGas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaOperacionesGas.aspx.designer.cs">
+      <DependentUpon>ConsultaOperacionesGas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTarjetasGasEFV.aspx.cs">
+      <DependentUpon>ConsultaTarjetasGasEFV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTarjetasGasEFV.aspx.designer.cs">
+      <DependentUpon>ConsultaTarjetasGasEFV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaTarjetasVG.aspx.cs">
+      <DependentUpon>ConsultaTarjetasVG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaTarjetasVG.aspx.designer.cs">
+      <DependentUpon>ConsultaTarjetasVG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Business\QueriesController.cs" />
+    <Compile Include="Controllers\Extensions\ApiControllerExtension.cs" />
+    <Compile Include="Controllers\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Controllers\Extensions\UserWebApi.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarListaNegraComercios.aspx.cs">
+      <DependentUpon>ImportarListaNegraComercios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportarListaNegraComercios.aspx.designer.cs">
+      <DependentUpon>ImportarListaNegraComercios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportarListaNegraTarjetas.aspx.cs">
+      <DependentUpon>ImportarListaNegraTarjetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportarListaNegraTarjetas.aspx.designer.cs">
+      <DependentUpon>ImportarListaNegraTarjetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAngular.Master.cs">
+      <DependentUpon>MasterAngular.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAngular.Master.designer.cs">
+      <DependentUpon>MasterAngular.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MayoresPromedioPorGiro.aspx.cs">
+      <DependentUpon>MayoresPromedioPorGiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MayoresPromedioPorGiro.aspx.designer.cs">
+      <DependentUpon>MayoresPromedioPorGiro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiplesGirosenUnMes.aspx.cs">
+      <DependentUpon>MultiplesGirosenUnMes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiplesGirosenUnMes.aspx.designer.cs">
+      <DependentUpon>MultiplesGirosenUnMes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiplesOperacionesConsumoTotalSaldo.aspx.cs">
+      <DependentUpon>MultiplesOperacionesConsumoTotalSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiplesOperacionesConsumoTotalSaldo.aspx.designer.cs">
+      <DependentUpon>MultiplesOperacionesConsumoTotalSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MultiplesOperacionesEnPeriodo.aspx.cs">
+      <DependentUpon>MultiplesOperacionesEnPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiplesOperacionesEnPeriodo.aspx.designer.cs">
+      <DependentUpon>MultiplesOperacionesEnPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesListaNegra.aspx.cs">
+      <DependentUpon>OperacionesListaNegra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperacionesListaNegra.aspx.designer.cs">
+      <DependentUpon>OperacionesListaNegra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesListaNegraComercios.aspx.cs">
+      <DependentUpon>OperacionesListaNegraComercios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperacionesListaNegraComercios.aspx.designer.cs">
+      <DependentUpon>OperacionesListaNegraComercios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesMayoresPorcentajeSaldo.aspx.cs">
+      <DependentUpon>OperacionesMayoresPorcentajeSaldo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperacionesMayoresPorcentajeSaldo.aspx.designer.cs">
+      <DependentUpon>OperacionesMayoresPorcentajeSaldo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OperacionesRechazadas.aspx.cs">
+      <DependentUpon>OperacionesRechazadas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperacionesRechazadas.aspx.designer.cs">
+      <DependentUpon>OperacionesRechazadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OperacionesMayores.aspx.cs">
+      <DependentUpon>OperacionesMayores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OperacionesMayores.aspx.designer.cs">
+      <DependentUpon>OperacionesMayores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RechazosEnCortoTiempo.aspx.cs">
+      <DependentUpon>RechazosEnCortoTiempo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RechazosEnCortoTiempo.aspx.designer.cs">
+      <DependentUpon>RechazosEnCortoTiempo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla_8004_MontoAcumuladoPorPeriodo.aspx.cs">
+      <DependentUpon>Regla_8004_MontoAcumuladoPorPeriodo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla_8004_MontoAcumuladoPorPeriodo.aspx.designer.cs">
+      <DependentUpon>Regla_8004_MontoAcumuladoPorPeriodo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla_8008_FueraZonaGeografica.aspx.cs">
+      <DependentUpon>Regla_8008_FueraZonaGeografica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla_8008_FueraZonaGeografica.aspx.designer.cs">
+      <DependentUpon>Regla_8008_FueraZonaGeografica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_CasosEFV.aspx.cs">
+      <DependentUpon>Reporte_CasosEFV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte_CasosEFV.aspx.designer.cs">
+      <DependentUpon>Reporte_CasosEFV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALValidacionesBatchPPF\DALValidacionesBatchPPF.csproj">
+      <Project>{d622ceac-7ab8-41b1-b804-36ce0e1aae0a}</Project>
+      <Name>DALValidacionesBatchPPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54264</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CentralAdministrativa_QA/ValidacionesBatch</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

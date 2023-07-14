@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6A7CB9B7-25F5-4993-8190-F5D2F163FBB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DALPuntoVentaWeb</RootNamespace>
+    <AssemblyName>DALPuntoVentaWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DALAutorizador">
+      <HintPath>..\..\..\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d6cb3b4184fcd8c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases">
+      <HintPath>..\..\..\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log_PCI">
+      <HintPath>..\..\..\Dll\Log_PCI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\..\Dll\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Services">
+      <HintPath>..\..\..\Dll\Microsoft.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDatos\BDBatch.cs" />
+    <Compile Include="BaseDatos\BDProcesadorArchivos.cs" />
+    <Compile Include="BaseDatos\BDProcesadorNocturno.cs" />
+    <Compile Include="BaseDatos\BDT112.cs" />
+    <Compile Include="BaseDatos\BDWebhook.cs" />
+    <Compile Include="BaseDatos\BDWebhookMati.cs" />
+    <Compile Include="BaseDatos\DAOAdministrarColectivas.cs" />
+    <Compile Include="BaseDatos\DAOAdministrarPersonasMorales.cs" />
+    <Compile Include="BaseDatos\DAOClabePendiente.cs" />
+    <Compile Include="BaseDatos\DAOCompensaciones.cs" />
+    <Compile Include="BaseDatos\DAOConciliaciones.cs" />
+    <Compile Include="BaseDatos\DAOCVDP.cs" />
+    <Compile Include="BaseDatos\DAOMenu.cs" />
+    <Compile Include="BaseDatos\DAOPromociones.cs" />
+    <Compile Include="BaseDatos\DAOPropiedad.cs" />
+    <Compile Include="BaseDatos\DAOReportes.cs" />
+    <Compile Include="BaseDatos\DAOSrPago.cs" />
+    <Compile Include="BaseDatos\DAOAdministrarBanca.cs" />
+    <Compile Include="BaseDatos\DAOTPV.cs" />
+    <Compile Include="BaseDatos\DAOWebhook.cs" />
+    <Compile Include="Entidades\Colectiva.cs" />
+    <Compile Include="Entidades\Cuenta.cs" />
+    <Compile Include="Entidades\DatosSrPago.cs" />
+    <Compile Include="Entidades\DiaNoBancario.cs" />
+    <Compile Include="Entidades\DireccionColectiva.cs" />
+    <Compile Include="Entidades\HttpWebhookOnB.cs" />
+    <Compile Include="Entidades\MenuTPV.cs" />
+    <Compile Include="Entidades\NewToken.cs" />
+    <Compile Include="Entidades\Parametro.cs" />
+    <Compile Include="Entidades\ParametroExtra.cs" />
+    <Compile Include="Entidades\PayCard.cs" />
+    <Compile Include="Entidades\PersonaMoral.cs" />
+    <Compile Include="Entidades\Promocion.cs" />
+    <Compile Include="Entidades\Propiedad.cs" />
+    <Compile Include="Entidades\WSJsonResponses.cs" />
+    <Compile Include="Entidades\WsResponse.cs" />
+    <Compile Include="Entidades\WsTokenErrorResponse.cs" />
+    <Compile Include="Entidades\WsTokenOkResponse.cs" />
+    <Compile Include="LogicaNegocio\LNAdministrarColectivas.cs" />
+    <Compile Include="LogicaNegocio\LNAdministrarPersonasMorales.cs" />
+    <Compile Include="LogicaNegocio\LNClabePendiente.cs" />
+    <Compile Include="LogicaNegocio\LNCompensaciones.cs" />
+    <Compile Include="LogicaNegocio\LNEscrituraGeneral.cs" />
+    <Compile Include="LogicaNegocio\LNPromociones.cs" />
+    <Compile Include="LogicaNegocio\LNPropiedad.cs" />
+    <Compile Include="LogicaNegocio\LNReportes.cs" />
+    <Compile Include="LogicaNegocio\LNSrPago.cs" />
+    <Compile Include="LogicaNegocio\LNAdministrarBanca.cs" />
+    <Compile Include="LogicaNegocio\LNWebhook.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Logueo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Plugins\Utilerias\Utilerias.csproj">
+      <Project>{57F9253C-B4B7-45AC-BC3B-0E1F133A1DEC}</Project>
+      <Name>Utilerias</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALCortador\DALEventos.csproj">
+      <Project>{6d5b4bb2-16bf-4751-b45b-6b0fca77c525}</Project>
+      <Name>DALEventos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,53 @@
+﻿<md-dialog aria-label="dialog" flex="50">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 md-truncate>Agregar cobertura a  {{sucursal.nombre}}</h2>
+            <span flex></span>
+
+            <!--<md-button class="md-icon-button" ng-click="addItem()">
+                <md-tooltip md-direction="bottom">Agregar</md-tooltip>
+                <md-icon md-svg-icon="plus" aria-label="Agregar"></md-icon>
+            </md-button>-->
+            
+            <md-button class="md-icon-button" ng-click="addCoverage(item)" style="margin-right: 20px;">
+                <md-tooltip md-direction="top">Guardar</md-tooltip>
+                <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+            </md-button>
+
+
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+
+        </div>
+
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <form name="baseDialogForm">
+          
+
+            
+
+        </form>
+
+    </md-dialog-content>
+
+
+    <!--<md-dialog-actions>
+
+        <md-button class="md-icon-button" ng-click="addCoverage(item)" style="margin-right: 20px;">
+            <md-tooltip md-direction="top">Agregar</md-tooltip>
+            <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+        </md-button>
+
+        <md-button ng-click="cancel()" style="margin-right:20px; margin-left: 10px;">
+            Cerrar
+        </md-button>
+
+    </md-dialog-actions>-->
+
+
+
+</md-dialog>

@@ -1,0 +1,80 @@
+﻿<md-dialog aria-label="dialog" flex="60">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 md-truncate>Horarios  de {{sucursal.nombre}}</h2>
+            <span flex></span>
+
+            <md-button class="md-icon-button" ng-click="addItem()">
+                <md-tooltip md-direction="bottom">Agregar</md-tooltip>
+                <md-icon md-svg-icon="plus" aria-label="Agregar"></md-icon>
+            </md-button>
+
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+
+        </div>
+
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <form name="baseDialogForm">
+            <md-list>
+
+                <md-list-item ng-repeat="workDay in sucursalHorario.WorkDays | orderBy:'IdDay'" layout="row" layout-align="space-around ">
+                    <!--<md-icon md-svg-icon="store-24-hour" style="font-size:36px;" aria-label="icon"></md-icon>-->
+                    <div layout="row" layout-align="space-around" flex>
+                        <md-input-container md-no-float>
+                            <!--<label>Experiencia de crédito de la empresa </label> placeholder="Experiencia de crédito de la empresa "-->
+                            <md-select ng-model="workDay.IdDay" aria-label="noada">
+                                <md-option ng-value="day.Id" ng-repeat="day in sucursalHorario.DaysOfWeek">{{ day.Name }}</md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <mdp-time-picker mdp-use-utc="true" ng-model="workDay.Range[0]" required></mdp-time-picker>
+                        <mdp-time-picker mdp-use-utc="true" ng-model="workDay.Range[1]"></mdp-time-picker>
+
+
+
+
+                    </div>
+                    <div flex class="md-secondary">
+                        <md-button class=" md-icon-button" ng-click="delete(workDay)">
+                            <md-tooltip md-direction="left">Eliminar</md-tooltip>
+                            <md-icon md-svg-icon="delete" aria-label="Eliminar"></md-icon>
+                        </md-button>
+                    </div>
+
+                    <!--<mdp-time-picker mdp-use-utc="false" ng-model="workDay.Range[0]"></mdp-time-picker>
+                <mdp-time-picker mdp-use-utc="false" ng-model="workDay.Range[1]"></mdp-time-picker>-->
+                    <!--<md-datepicker ng-model="workDay.Range[1]" ng-model-options="{timeszone:'utc'}"></md-datepicker>-->
+                    <!--<md-divider></md-divider>-->
+
+
+                </md-list-item>
+
+            </md-list>
+
+
+
+        </form>
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions>
+
+        <md-button class="md-icon-button" ng-click="updateHorarios(time)" style="margin-right: 20px;">
+            <md-tooltip md-direction="top">Guardar</md-tooltip>
+            <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+        </md-button>
+
+        <md-button ng-click="cancel()" style="margin-right:20px; margin-left: 10px;">
+            Cerrar
+        </md-button>
+    </md-dialog-actions>
+
+
+
+</md-dialog>

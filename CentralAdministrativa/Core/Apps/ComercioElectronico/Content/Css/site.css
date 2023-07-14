@@ -1,0 +1,33 @@
+﻿
+.loading{
+  width:100%;
+  height:100%;
+  background-color:#fff;
+  z-index:1000;
+  opacity:.5 !important;
+  position:fixed;
+  top:0px;
+  left:0px;
+}
+
+
+md-sidenav, md-sidenav.md-locked-open, md-sidenav.md-closed.md-locked-open-add-active {
+ /*min-width: 200px !important;*/
+ width: 70vw !important;
+ max-width: 800px !important;
+}
+
+
+
+
+/*
+md-icon svg  {
+  
+}*/
+
+
+
+md-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    /*min-height: 400px;*/
+    /*min-height: 50% !important;*/
+}

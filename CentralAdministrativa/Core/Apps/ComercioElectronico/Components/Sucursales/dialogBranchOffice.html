@@ -1,0 +1,78 @@
+﻿<md-dialog aria-label="dialog" >
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 md-truncate>Sucursal substituta  de {{sucursal.nombre}}</h2>
+            <span flex></span>
+
+            <!--<md-button class="md-icon-button" ng-click="addItem()">
+                <md-tooltip md-direction="bottom">Agregar</md-tooltip>
+                <md-icon md-svg-icon="plus" aria-label="Agregar"></md-icon>
+            </md-button>-->
+
+
+
+
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+
+        </div>
+
+    </md-toolbar>
+
+    <md-dialog-content>
+
+        <br />
+        <!--+' '+item.DesAsentamiento)-->
+        <md-autocomplete md-no-cache="true"
+                         md-selected-item="selectedItem"
+                         md-search-text-change="searchTextChange(searchText)"
+                         md-search-text="searchText"
+                         md-items="item in querySearch(searchText)"
+                         md-item-text="(item.nombre)"
+                         md-min-length="0"
+                         md-selected-item-change="pickBranchOffice(selectedItem)"
+                         placeholder="Escoja una sucursal " flex >
+
+            <md-item-template>
+                <span md-highlight-text="searchText" md-highlight-flags="^i">  {{item.nombre}}</span>
+            </md-item-template>
+            <md-not-found>
+                No se encontraron resultados del texto "{{searchText}}" .
+                <!--<a ng-click="ctrl.newState(ctrl.searchText)"> {{item.Sku}}Create a new one!</a>-->
+            </md-not-found>
+
+        </md-autocomplete>
+        
+        <br />
+
+        <!--<md-card>
+            <md-card-content>
+            </md-card-content>
+        </md-card>-->
+
+
+
+
+
+    </md-dialog-content>
+
+
+    <md-dialog-actions>
+        
+
+        <md-button class="md-icon-button" ng-click="updateBranchOffice()" style="margin-right: 20px;">
+            <md-tooltip md-direction="top">Guardar</md-tooltip>
+            <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+        </md-button>
+
+
+
+        <md-button ng-click="cancel()" style="margin-right:20px; margin-left: 10px;">
+            Cerrar
+        </md-button>
+    </md-dialog-actions>
+
+
+
+</md-dialog>

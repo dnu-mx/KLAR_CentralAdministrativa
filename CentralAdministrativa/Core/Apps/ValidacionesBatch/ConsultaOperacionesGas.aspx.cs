@@ -1,0 +1,294 @@
+﻿using ClosedXML.Excel;
+using DALCentralAplicaciones;
+using DALValidacionesBatchPPF.BaseDatos;
+using DALValidacionesBatchPPF.Utilidades;
+using Ext.Net;
+using Interfases.Exceptiones;
+using System;
+using System.Configuration;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Xml;
+using System.Xml.Xsl;
+
+
+namespace ValidacionesBatch
+{
+    public partial class ConsultaOperacionesGas : PaginaBaseCAPP
+    {
+        /// <summary>
+        /// Realiza y controla la carga de la página Consulta Operaciones Gas
+        /// </summary>
+        /// <param name="sender">Objeto que envía el control</param>
+        /// <param name="e">Argumentos del evento que se ejecutó</param>
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!IsPostBack)
+                {
+                    //Prestablecemos el periodo de consulta de las operaciones
+                    dfFechaInicialOper.MaxDate = DateTime.Today;
+                    dfFechaInicialOper.MinDate = DateTime.Today.AddDays(-180);
+                    dfFechaInicialOper.SetValue(DateTime.Today.AddDays(-180));
+
+                    dfFechaFinalOper.MaxDate = DateTime.Today;
+                    dfFechaFinalOper.SetValue(DateTime.Today);
+                }
+            }
+            catch (Exception err)
+            {
+                Loguear.Error(err, "");
+                Response.Redirect("../ErrorInicializarPagina.aspx");
+            }
+        }
+
+        /// <summary>
+        /// Controla el evento Click al botón Buscar de la pestaña de Operaciones, invocando a la 
+        /// búsqueda de operaciones de la tarjeta en base de datos
+        /// </summary>
+        /// <param name="sender">Objeto que envía el control</param>
+        /// <param name="e">Argumentos del evento que se ejecutó</param>
+        protected void btnBuscarOper_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StoreResultadosOper.RemoveAll();
+
+                if (!String.IsNullOrEmpty(this.txtTarjeta.Text))
+                {
+                    Int64 tarjeta;
+
+                    if (!Int64.TryParse(this.txtTarjeta.Text, out tarjeta))
+                    {
+                        X.Msg.Alert("Filtros de búsqueda", "La Tarjeta debe ser numérica").Show();
+                        return;
+                    }
+                }
+                
+                this.lblTituloTarjeta.Text = "";
+
+                DataSet dsOperaciones = DAOEfectivaleOffline.ObtieneOperacionesTarjetaGas(
+                    Convert.ToDateTime(this.dfFechaInicialOper.SelectedDate),
+                    Convert.ToDateTime(this.dfFechaFinalOper.SelectedDate),
+                    this.txtTarjeta.Text, this.Usuario,
+                    Guid.Parse(ConfigurationManager.AppSettings["IDApplication"].ToString()));
+
+                if (dsOperaciones.Tables[0].Rows.Count == 0)
+                {
+                    X.Msg.Alert("Operaciones", "No existen coincidencias con los datos solicitados").Show();
+                }
+                else
+                {
+                    this.lblTituloTarjeta.Text = String.IsNullOrEmpty(this.txtTarjeta.Text) ? "" : "Tarjeta: T" + this.txtTarjeta.Text;
+                    StoreResultadosOper.DataSource = dsOperaciones;
+                    StoreResultadosOper.DataBind();
+                }
+            }
+
+            catch (CAppException caEx)
+            {
+                Loguear.Error(caEx, this.Usuario.ClaveUsuario);
+                X.Msg.Alert("Operaciones", "Ocurrió un Error en la Consulta de Operaciones").Show();
+
+            }
+
+            catch (Exception ex)
+            {
+                Loguear.Error(ex, this.Usuario.ClaveUsuario);
+                X.Msg.Alert("Operaciones", ex.Message).Show();
+            }
+        }
+
+        /// <summary>
+        /// Controla el evento Click al botón Limpiar de la pestaña de Operaciones,
+        /// restableciendo los controles de la página al valor de carga origen
+        /// </summary>
+        /// <param name="sender">Objeto que envía el control</param>
+        /// <param name="e">Argumentos del evento que se ejecutó</param>
+        protected void btnLimpiarOper_Click(object sender, EventArgs e)
+        {
+            FormPanelBuscarOperaciones.Reset();
+            this.txtTarjeta.Reset();
+            this.lblTituloTarjeta.Text = "";
+
+            dfFechaInicialOper.SetValue(DateTime.Today.AddDays(-180));
+
+            dfFechaFinalOper.SetValue(DateTime.Today);
+
+            StoreResultadosOper.RemoveAll();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void SubmitGrid(object sender, DirectEventArgs e)
+        {
+            string gridOperJson = e.ExtraParams["GridOper"];
+
+            XmlNode gridOperXml = JSON.DeserializeXmlNode("{records:{record:" + gridOperJson + "}}");
+            XmlTextReader xtr = new XmlTextReader(gridOperXml.OuterXml, XmlNodeType.Element, null);
+
+            DataSet ds = new DataSet();         
+            ds.ReadXml(xtr);
+
+            XLWorkbook wb = new XLWorkbook();
+            var ws = wb.Worksheets.Add("Operaciones");
+
+            //Se inserta la tabla completa a la hoja de Excel
+            ws.Cell(1, 1).InsertTable(ds.Tables[0].AsEnumerable());
+
+            //Se da el formato deseado a las columnas
+            for (int cellsCounter = 2; cellsCounter <= ws.Column(1).CellsUsed().Count(); cellsCounter++)
+            {
+                ws.Cell(cellsCounter, 1).SetDataType(XLCellValues.DateTime);
+                ws.Cell(cellsCounter, 5).SetDataType(XLCellValues.Number);
+                ws.Cell(cellsCounter, 6).SetDataType(XLCellValues.Number);
+            }
+
+            //Se prepara la respuesta
+            this.Response.Clear();
+            this.Response.ClearContent();
+            this.Response.ClearHeaders();
+            this.Response.Buffer = false;
+
+            this.Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+            this.Response.AddHeader("Content-Disposition", "attachment; filename=Operaciones_Gas.xlsx");
+
+            //Se envía el reporte como respuesta
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                wb.SaveAs(memoryStream);
+                memoryStream.WriteTo(this.Response.OutputStream);
+                memoryStream.Close();
+            }
+
+            this.Response.End();
+        }
+
+        protected IXLWorksheet PimpMyWorkSheet(IXLWorksheet ws)
+        {
+            int totalCells = ws.Column(1).CellsUsed().Count();
+
+            for (int cellsCounter = 2; cellsCounter <= totalCells; cellsCounter++)
+            {
+                ws.Cell(cellsCounter, 1).SetDataType(XLCellValues.DateTime);
+                ws.Cell(cellsCounter, 5).SetDataType(XLCellValues.Number);
+                ws.Cell(cellsCounter, 6).SetDataType(XLCellValues.Number);
+            }
+
+            return ws;
+        }
+
+
+        /// <summary>
+        /// Controla el evento SUBMIT al querer exportar al formato seleccionado
+        /// los resultados de la consulta de operaciones
+        /// </summary>
+        /// <param name="sender">Objeto que envía el control</param>
+        /// <param name="e">Argumentos del evento que se ejecutó</param>
+        protected void StoreSubmit(object sender, StoreSubmitDataEventArgs e)
+        {
+            string format = this.FormatType.Value.ToString();
+
+            XmlNode xml = e.Xml;
+
+            HttpContext.Current.Response.End();
+
+            this.Response.Clear();
+
+            switch (format)
+            {
+                case "xls":
+                    this.Response.ContentType = "application/vnd.ms-excel";
+                    this.Response.AddHeader("Content-Disposition", "attachment; filename=Reporte.xls");
+                    XslCompiledTransform xtExcel = new XslCompiledTransform();
+                    xtExcel.Load(Server.MapPath("xslFiles/Excel.xsl"));
+                    xtExcel.Transform(xml, null, Response.OutputStream);
+
+                    break;
+
+                case "csv":
+                    this.Response.ContentType = "application/octet-stream";
+                    this.Response.AddHeader("Content-Disposition", "attachment; filename=Reporte.csv");
+                    XslCompiledTransform xtCsv = new XslCompiledTransform();
+                    xtCsv.Load(Server.MapPath("xslFiles/Csv.xsl"));
+                    xtCsv.Transform(xml, null, Response.OutputStream);
+
+                    break;
+            }
+            this.Response.End();
+        }
+
+        /// <summary>
+        /// Controla el evento de selección de una celda del grid de Operaciones
+        /// </summary>
+        /// <param name="sender">Objeto que envía el control</param>
+        /// <param name="e">Argumentos directos del evento que se ejecutó</param>
+        protected void CellGridResultadosOper_Click(object sender, DirectEventArgs e)
+        {
+            CellSelectionModel sm = GridResultadosOper.SelectionModel.Primary as CellSelectionModel;
+
+            if (String.Compare(sm.SelectedCell.Name, "Estacion") != 0)
+            {
+                return;
+            }
+
+            if (!String.IsNullOrEmpty(sm.SelectedCell.Value))
+            {
+                VentanaEstacion(sm.SelectedCell.Value);
+            }
+        }
+
+        /// <summary>
+        /// Solicita la consulta de datos de la estación con el valor indicado y muestra
+        /// la ventana correspondiente
+        /// </summary>
+        /// <param name="estacion">Estación por consultar</param>
+        protected void VentanaEstacion(String estacion)
+        {
+            try
+            {
+                DataSet dsAfiliacion =
+                    DAOEfectivaleOffline.ObtieneDatosEstacion(estacion,
+                    this.Usuario, Guid.Parse(ConfigurationManager.AppSettings["IDApplication"].ToString()));
+
+                this.txtEstacion.Text = dsAfiliacion.Tables[0].Rows[0]["Estacion"].ToString().Trim();
+                this.txtNombre.Text = dsAfiliacion.Tables[0].Rows[0]["Nombre"].ToString().Trim();
+                this.txtDireccion.Text = dsAfiliacion.Tables[0].Rows[0]["Direccion"].ToString().Trim();
+                this.txtColonia.Text = dsAfiliacion.Tables[0].Rows[0]["Colonia"].ToString().Trim();
+                this.txtCodigoPostal.Text = dsAfiliacion.Tables[0].Rows[0]["CP"].ToString().Trim();
+                this.txtCiudad.Text = dsAfiliacion.Tables[0].Rows[0]["Ciudad"].ToString().Trim();
+                this.txtEstado.Text = dsAfiliacion.Tables[0].Rows[0]["Estado"].ToString().Trim();
+
+                this.WdwEstacion.Show();
+            }
+
+            catch (CAppException caEx)
+            {
+                Loguear.Error(caEx, this.Usuario.ClaveUsuario);
+                X.Msg.Alert("Estación", "Ocurrió un Error en la Consulta de Datos de la Estación").Show();
+            }
+
+            catch (Exception ex)
+            {
+                Loguear.Error(ex, this.Usuario.ClaveUsuario);
+                X.Msg.Alert("Estación", ex.Message).Show();
+            }
+        }
+
+        /// <summary>
+        /// Controla el evento Click al botón Aceptar de la ventana Estación, para ocultarla
+        /// </summary>
+        /// <param name="sender">Objeto que envía el control</param>
+        /// <param name="e">Argumentos del evento que se ejecutó</param>
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            this.WdwEstacion.Hide();
+        }
+    }
+}

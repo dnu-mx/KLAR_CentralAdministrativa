@@ -1,0 +1,157 @@
+﻿<md-dialog aria-label="dialog" flex="75">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 md-truncate>Cobertura  de {{sucursal.nombre}}</h2>
+            <span flex></span>
+
+            <!--<md-button class="md-icon-button" ng-click="addItem()">
+                <md-tooltip md-direction="bottom">Agregar</md-tooltip>
+                <md-icon md-svg-icon="plus" aria-label="Agregar"></md-icon>
+            </md-button>-->
+            
+            <md-button class="md-icon-button" ng-click="updateCoverage()" style="margin-right: 20px;">
+                <md-tooltip md-direction="top">Guardar</md-tooltip>
+                <md-icon aria-label="save" md-svg-icon="content-save"></md-icon>
+            </md-button>
+
+            
+
+
+            <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+
+        </div>
+
+    </md-toolbar>
+
+    <md-dialog-content>
+        
+        <!--+' '+item.DesAsentamiento)-->
+        <md-autocomplete md-no-cache="true"
+                         md-selected-item="selectedItem"
+                         md-search-text-change="searchTextChange(searchText)"
+                         md-search-text="searchText"
+                         md-items="item in querySearch(searchText)"
+                         md-item-text="item.CodigoPostal"
+                         md-min-length="1"
+                         md-selected-item-change="addCoverage(selectedItem)"
+                         placeholder="Coloque un codigo postal" flex style="margin-right: 15px;">
+
+            <md-item-template>
+                <span md-highlight-text="searchText" md-highlight-flags="^i"> {{item.CodigoPostal}} {{item.DesAsentamiento}}</span>
+            </md-item-template>
+            <md-not-found>
+                No se encontraron resultados del texto "{{searchText}}" .
+                <!--<a ng-click="ctrl.newState(ctrl.searchText)"> {{item.Sku}}Create a new one!</a>-->
+            </md-not-found>
+
+        </md-autocomplete>
+
+        
+
+        
+        <md-table-container style="overflow: auto; max-height: 70vh;">
+            <table md-table>
+                <caption></caption>
+
+
+                <thead md-head fix-head>
+                    <tr md-row>
+
+                        <!--<th md-column><span>Id asentamiento</span></th>-->
+                        <th id="claveAsentamiento" md-column><span>Clave asentamiento</span></th>
+                        <th id="codigoPoostal" md-column><span>Codigo postal</span></th>
+                        <th id="descripcion" md-column><span>Descripcion</span></th>
+                        <th id="acciones" md-column><span>Acciones</span></th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody md-body>
+
+                    <tr md-row ng-repeat="ase in  sucursalCoverage">
+
+                        <td md-cell>{{ase.clave_asentamiento}} </td>
+                        <!--<td md-cell>{{ase.clave_asentamiento}} </td>-->
+                        <td md-cell>{{ase.codigo_postal}} </td>
+                        <td md-cell>{{ase.descripcion_asentamiento}} </td>
+
+                        <td md-cell>
+
+                            <!--<md-button class="md-icon-button" ng-click="edit(pc)">
+                <md-tooltip md-direction="top">Editar</md-tooltip>
+                <md-icon md-svg-icon="pencil" aria-label="Editar"></md-icon>
+            </md-button>-->
+
+                            <md-button class="md-icon-button" ng-click="deleteItem(ase,$event)">
+                                <md-tooltip md-direction="left">Eliminar</md-tooltip>
+                                <md-icon md-svg-icon="delete" aria-label="Eliminar"></md-icon>
+                            </md-button>
+
+                        </td>
+
+
+
+
+
+
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+
+
+        
+
+        <!--<form name="baseDialogForm">
+            <md-list>
+
+                <md-list-item ng-repeat="workDay in sucursalHorario.WorkDays | orderBy:'IdDay'" layout="row" layout-align="space-around ">
+                    
+                    <div layout="row" layout-align="space-around" flex>
+                        <md-input-container md-no-float>
+                            
+                            <md-select ng-model="workDay.IdDay" aria-label="noada">
+                                <md-option ng-value="day.Id" ng-repeat="day in sucursalHorario.DaysOfWeek">{{ day.Name }}</md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <mdp-time-picker mdp-use-utc="true" ng-model="workDay.Range[0]" required></mdp-time-picker>
+                        <mdp-time-picker mdp-use-utc="true" ng-model="workDay.Range[1]"></mdp-time-picker>
+
+
+
+
+                    </div>
+                    <div flex class="md-secondary">
+                        <md-button class=" md-icon-button" ng-click="delete(workDay)">
+                            <md-tooltip md-direction="left">Eliminar</md-tooltip>
+                            <md-icon md-svg-icon="delete" aria-label="Eliminar"></md-icon>
+                        </md-button>
+                    </div>
+
+              
+                </md-list-item>
+
+            </md-list>
+        </form>-->
+
+    </md-dialog-content>
+
+
+    <!--<md-dialog-actions>
+
+       
+        <md-button ng-click="cancel()" style="margin-right:20px; margin-left: 10px;">
+            Cerrar
+        </md-button>
+    </md-dialog-actions>-->
+
+
+
+</md-dialog>

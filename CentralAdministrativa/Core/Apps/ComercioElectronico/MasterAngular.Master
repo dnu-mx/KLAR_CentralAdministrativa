@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterAngular.master.cs" Inherits="ComercioElectronico.MasterAngular" %>
+
+<!DOCTYPE html >
+
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ZApp">
+<head runat="server">
+
+    <link rel="icon" type="image/png" href="Content/Images/favicon.png" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Catalogos</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.5/angular-material.css"/>
+    <link rel="stylesheet" href="~/Content/Css/mddatatable.css" />
+    <link rel="stylesheet" href="~/Content/Css/mdPickers.css" />
+    <link rel="stylesheet" href="~/Content/Css/site.css" />
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-aria.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-messages.js"></script>
+
+    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>--%>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-resource.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.5/angular-material.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/restangular/1.6.1/restangular.js"></script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.js"></script>
+  
+    
+
+
+
+ 
+    <script src="Content/Scripts/mddatatable.js"></script>
+      <script src="Content/Scripts/fixedtableheader.js"></script>
+    <script src="Content/Scripts/angularinputmask.js"></script>
+    <script src="Content/Scripts/mdPickers.js"></script>
+
+
+    <script src="Content/CoreAngular/baseStart.js"></script>
+    <script src="Content/CoreAngular/baseModules.js"></script>
+
+
+
+
+</head>
+<body  runat="server" layout="column" >
+
+    
+     <script type='text/ng-template' id="message-template">
+      <div ng-message="minlength"> Longitud minima </div>
+        <div ng-message="required">El campo es requerido.</div>
+      <div ng-message="maxlength">Maxima longitud </div>
+  </script>
+    
+    
+        <script>
+                                           
+            (function (zmodule) {
+
+                zmodule.run(
+                    ["$rootScope", "Restangular"
+                        ,function (
+                            $rootScope, Restangular
+                            ) {
+                            //$http.defaults.headers.common.authToken = "<%= Token %>";
+                            //$rootScope.token = "<%= Token %>";
+                            //$rootScope.zvalue = "asd";
+                            Restangular.setDefaultHeaders({ "authToken": "<%= Token %>" });
+                            Restangular.setBaseUrl("<%=HttpContext.Current.Request.ApplicationPath%>"+"/api/");
+
+                            
+                            //Restangular.
+                        }
+                    ]);
+
+
+            })(moduleApp);
+
+        </script>
+    
+        
+
+        
+        <div layout-fill>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"   >
+        
+        </asp:ContentPlaceHolder>
+</div>
+    
+    
+    <%--.{{zvalue}}.--%>
+
+
+    <%
+        
+        //Response.Write("<br/> " + HttpContext.Current.Request.Url.Host);
+        //Response.Write("<br/> " + HttpContext.Current.Request.Url.Authority);
+        //Response.Write("<br/> " + HttpContext.Current.Request.Url.Port);
+        //Response.Write("<br/> " + HttpContext.Current.Request.Url.AbsolutePath);
+        //Response.Write("<br/> " + HttpContext.Current.Request.ApplicationPath);
+        //Response.Write("<br/> " + HttpContext.Current.Request.Url.AbsoluteUri);
+        //Response.Write("<br/> " + HttpContext.Current.Request.Url.PathAndQuery);
+        
+         %>
+    <div layout="row" layout-align="center center" class="loading" id="loading" ng-show="disableActions" style="opacity:1">
+            <div>
+                <md-progress-circular md-diameter="70" md-mode="indeterminate"></md-progress-circular>
+            </div>Cargando...
+        </div>
+
+
+
+</body>
+</html>

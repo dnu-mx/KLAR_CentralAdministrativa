@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9871ABE-D88B-457C-91A5-4448E965B325}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lealtad</RootNamespace>
+    <AssemblyName>Lealtad</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML">
+      <HintPath>..\..\..\..\Resources\Dll\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DALAutorizador">
+      <HintPath>..\..\..\..\Resources\Dll\DALAutorizador.dll</HintPath>
+    </Reference>
+    <Reference Include="DALCentralAplicaciones">
+      <HintPath>..\..\..\..\Resources\Dll\DALCentralAplicaciones.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>..\..\..\..\Resources\Dll\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net">
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext.Net.Utilities">
+      <HintPath>..\..\..\..\Resources\Dll\Ext.Net.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Interfases">
+      <HintPath>..\..\..\..\Resources\Dll\Interfases.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Resources\Dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log_PCI">
+      <HintPath>..\..\..\..\Resources\Dll\Log_PCI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Services">
+      <HintPath>..\..\..\..\Resources\Dll\Microsoft.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Resources\Dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ActualizaBeneficiosEdenred.aspx" />
+    <Content Include="ActualizaBeneficiosPrana.aspx" />
+    <Content Include="ActualizaBeneficiosSams.aspx" />
+    <Content Include="ActualizaSucursalesEdenred.aspx" />
+    <Content Include="ActualizaSucursalesPrana.aspx" />
+    <Content Include="ActualizaSucursalesSams.aspx" />
+    <Content Include="AcumulacionPuntosCash.aspx" />
+    <Content Include="AcumulacionPuntosMoshi.aspx" />
+    <Content Include="AdminCertificados_Amazon.aspx" />
+    <Content Include="AdministrarSubGirosPrana.aspx" />
+    <Content Include="AdministrarObjetosPrana.aspx" />
+    <Content Include="AdministrarCampanasPrana.aspx" />
+    <Content Include="AdministrarPromosPrana.aspx" />
+    <Content Include="AdministrarCadSucPrana.aspx" />
+    <Content Include="AltaPromocionesEcommerce.aspx" />
+    <Content Include="CambioNivelMoshi.aspx" />
+    <Content Include="CambioVigenciaPromociones.aspx" />
+    <Content Include="CargaDescargaFTP.aspx" />
+    <Content Include="CargaMembresias_CCIMEF.aspx" />
+    <Content Include="ConveniosEmpresas.aspx" />
+    <Content Include="CumpleanyosMoshi.aspx" />
+    <Content Include="GenerarCodigosCupones.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="PorcentajeBonificado.aspx" />
+    <Content Include="PorcentajeBonificarRangoVenta.aspx" />
+    <Content Include="Beneficios.aspx" />
+    <Content Include="PromoEspecialesCash.aspx" />
+    <Content Include="PromoEspecialesMoshi.aspx" />
+    <Content Include="RedencionPuntosMoshi.aspx" />
+    <Content Include="Regla001.aspx" />
+    <Content Include="Regla002.aspx" />
+    <Content Include="Regla003.aspx" />
+    <Content Include="Regla004.aspx" />
+    <Content Include="Regla005.aspx" />
+    <Content Include="Regla006.aspx" />
+    <Content Include="Regla007.aspx" />
+    <Content Include="Regla008.aspx" />
+    <Content Include="Regla009.aspx" />
+    <Content Include="Regla010.aspx" />
+    <Content Include="ReporteBeneficiosEdenred.aspx" />
+    <Content Include="ReporteClientesEdoMex.aspx" />
+    <Content Include="ReporteBeneficiosPrana.aspx" />
+    <Content Include="ReporteBeneficiosSams.aspx" />
+    <Content Include="ReporteCategoriasFavoritas.aspx" />
+    <Content Include="ReporteBitacoraValidacionesMembresia.aspx" />
+    <Content Include="CargaMembresias_CuponClick.aspx" />
+    <Content Include="ReporteFoliosSmartTicketCinemex.aspx" />
+    <Content Include="ReporteFoliosSmartTicketMC.aspx" />
+    <Content Include="ReporteSubscripcionNewsLetterPrana.aspx" />
+    <Content Include="ReporteClientesPrana.aspx" />
+    <Content Include="ReporteCodigos.aspx" />
+    <Content Include="ReporteEnvioCorreosVentaSAMS.aspx" />
+    <Content Include="ReporteReferidosVentasSams.aspx" />
+    <Content Include="ReporteReferidosSams.aspx" />
+    <Content Include="ReporteCuponesEntregados.aspx" />
+    <Content Include="ReporteCuponesRedimidos.aspx" />
+    <Content Include="ReporteFoliosBonnus.aspx" />
+    <Content Include="ReporteFoliosEdenred.aspx" />
+    <Content Include="ReporteFoliosSmartGift.aspx" />
+    <Content Include="ReporteFoliosSmartTicket.aspx" />
+    <Content Include="ReporteImagenesCadenas.aspx" />
+    <Content Include="ReporteOperacionSucursales.aspx" />
+    <Content Include="ReportePromocionesFavoritas.aspx" />
+    <Content Include="ReporteRedenciones.aspx" />
+    <Content Include="ReporteSucursalesEdenred.aspx" />
+    <Content Include="ReporteSucursalesPrana.aspx" />
+    <Content Include="ReporteSucursalesSams.aspx" />
+    <Content Include="Scripts\TimeOut.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActualizaBeneficiosEdenred.aspx.cs">
+      <DependentUpon>ActualizaBeneficiosEdenred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizaBeneficiosEdenred.aspx.designer.cs">
+      <DependentUpon>ActualizaBeneficiosEdenred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaBeneficiosPrana.aspx.cs">
+      <DependentUpon>ActualizaBeneficiosPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizaBeneficiosPrana.aspx.designer.cs">
+      <DependentUpon>ActualizaBeneficiosPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaBeneficiosSams.aspx.cs">
+      <DependentUpon>ActualizaBeneficiosSams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizaBeneficiosSams.aspx.designer.cs">
+      <DependentUpon>ActualizaBeneficiosSams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaSucursalesEdenred.aspx.cs">
+      <DependentUpon>ActualizaSucursalesEdenred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizaSucursalesEdenred.aspx.designer.cs">
+      <DependentUpon>ActualizaSucursalesEdenred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaSucursalesPrana.aspx.cs">
+      <DependentUpon>ActualizaSucursalesPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizaSucursalesPrana.aspx.designer.cs">
+      <DependentUpon>ActualizaSucursalesPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActualizaSucursalesSams.aspx.cs">
+      <DependentUpon>ActualizaSucursalesSams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizaSucursalesSams.aspx.designer.cs">
+      <DependentUpon>ActualizaSucursalesSams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AcumulacionPuntosCash.aspx.cs">
+      <DependentUpon>AcumulacionPuntosCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcumulacionPuntosCash.aspx.designer.cs">
+      <DependentUpon>AcumulacionPuntosCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AcumulacionPuntosMoshi.aspx.cs">
+      <DependentUpon>AcumulacionPuntosMoshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcumulacionPuntosMoshi.aspx.designer.cs">
+      <DependentUpon>AcumulacionPuntosMoshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCertificados_Amazon.aspx.cs">
+      <DependentUpon>AdminCertificados_Amazon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCertificados_Amazon.aspx.designer.cs">
+      <DependentUpon>AdminCertificados_Amazon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarSubGirosPrana.aspx.cs">
+      <DependentUpon>AdministrarSubGirosPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarSubGirosPrana.aspx.designer.cs">
+      <DependentUpon>AdministrarSubGirosPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarObjetosPrana.aspx.cs">
+      <DependentUpon>AdministrarObjetosPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarObjetosPrana.aspx.designer.cs">
+      <DependentUpon>AdministrarObjetosPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarCampanasPrana.aspx.cs">
+      <DependentUpon>AdministrarCampanasPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarCampanasPrana.aspx.designer.cs">
+      <DependentUpon>AdministrarCampanasPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarPromosPrana.aspx.cs">
+      <DependentUpon>AdministrarPromosPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarPromosPrana.aspx.designer.cs">
+      <DependentUpon>AdministrarPromosPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdministrarCadSucPrana.aspx.cs">
+      <DependentUpon>AdministrarCadSucPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrarCadSucPrana.aspx.designer.cs">
+      <DependentUpon>AdministrarCadSucPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaPromocionesEcommerce.aspx.cs">
+      <DependentUpon>AltaPromocionesEcommerce.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaPromocionesEcommerce.aspx.designer.cs">
+      <DependentUpon>AltaPromocionesEcommerce.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambioNivelMoshi.aspx.cs">
+      <DependentUpon>CambioNivelMoshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambioNivelMoshi.aspx.designer.cs">
+      <DependentUpon>CambioNivelMoshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambioVigenciaPromociones.aspx.cs">
+      <DependentUpon>CambioVigenciaPromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambioVigenciaPromociones.aspx.designer.cs">
+      <DependentUpon>CambioVigenciaPromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaDescargaFTP.aspx.cs">
+      <DependentUpon>CargaDescargaFTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaDescargaFTP.aspx.designer.cs">
+      <DependentUpon>CargaDescargaFTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaMembresias_CCIMEF.aspx.cs">
+      <DependentUpon>CargaMembresias_CCIMEF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaMembresias_CCIMEF.aspx.designer.cs">
+      <DependentUpon>CargaMembresias_CCIMEF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConveniosEmpresas.aspx.cs">
+      <DependentUpon>ConveniosEmpresas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConveniosEmpresas.aspx.designer.cs">
+      <DependentUpon>ConveniosEmpresas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CumpleanyosMoshi.aspx.cs">
+      <DependentUpon>CumpleanyosMoshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CumpleanyosMoshi.aspx.designer.cs">
+      <DependentUpon>CumpleanyosMoshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarCodigosCupones.aspx.cs">
+      <DependentUpon>GenerarCodigosCupones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenerarCodigosCupones.aspx.designer.cs">
+      <DependentUpon>GenerarCodigosCupones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PorcentajeBonificado.aspx.cs">
+      <DependentUpon>PorcentajeBonificado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PorcentajeBonificado.aspx.designer.cs">
+      <DependentUpon>PorcentajeBonificado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PorcentajeBonificarRangoVenta.aspx.cs">
+      <DependentUpon>PorcentajeBonificarRangoVenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PorcentajeBonificarRangoVenta.aspx.designer.cs">
+      <DependentUpon>PorcentajeBonificarRangoVenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Beneficios.aspx.cs">
+      <DependentUpon>Beneficios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Beneficios.aspx.designer.cs">
+      <DependentUpon>Beneficios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PromoEspecialesCash.aspx.cs">
+      <DependentUpon>PromoEspecialesCash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PromoEspecialesCash.aspx.designer.cs">
+      <DependentUpon>PromoEspecialesCash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PromoEspecialesMoshi.aspx.cs">
+      <DependentUpon>PromoEspecialesMoshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PromoEspecialesMoshi.aspx.designer.cs">
+      <DependentUpon>PromoEspecialesMoshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedencionPuntosMoshi.aspx.cs">
+      <DependentUpon>RedencionPuntosMoshi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RedencionPuntosMoshi.aspx.designer.cs">
+      <DependentUpon>RedencionPuntosMoshi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla001.aspx.cs">
+      <DependentUpon>Regla001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla001.aspx.designer.cs">
+      <DependentUpon>Regla001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla002.aspx.cs">
+      <DependentUpon>Regla002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla002.aspx.designer.cs">
+      <DependentUpon>Regla002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla003.aspx.cs">
+      <DependentUpon>Regla003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla003.aspx.designer.cs">
+      <DependentUpon>Regla003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla004.aspx.cs">
+      <DependentUpon>Regla004.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla004.aspx.designer.cs">
+      <DependentUpon>Regla004.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla005.aspx.cs">
+      <DependentUpon>Regla005.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla005.aspx.designer.cs">
+      <DependentUpon>Regla005.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla006.aspx.cs">
+      <DependentUpon>Regla006.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla006.aspx.designer.cs">
+      <DependentUpon>Regla006.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla007.aspx.cs">
+      <DependentUpon>Regla007.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla007.aspx.designer.cs">
+      <DependentUpon>Regla007.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla008.aspx.cs">
+      <DependentUpon>Regla008.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla008.aspx.designer.cs">
+      <DependentUpon>Regla008.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla009.aspx.cs">
+      <DependentUpon>Regla009.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla009.aspx.designer.cs">
+      <DependentUpon>Regla009.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Regla010.aspx.cs">
+      <DependentUpon>Regla010.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regla010.aspx.designer.cs">
+      <DependentUpon>Regla010.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBeneficiosEdenred.aspx.cs">
+      <DependentUpon>ReporteBeneficiosEdenred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBeneficiosEdenred.aspx.designer.cs">
+      <DependentUpon>ReporteBeneficiosEdenred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientesEdoMex.aspx.cs">
+      <DependentUpon>ReporteClientesEdoMex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteClientesEdoMex.aspx.designer.cs">
+      <DependentUpon>ReporteClientesEdoMex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBeneficiosPrana.aspx.cs">
+      <DependentUpon>ReporteBeneficiosPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBeneficiosPrana.aspx.designer.cs">
+      <DependentUpon>ReporteBeneficiosPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBeneficiosSams.aspx.cs">
+      <DependentUpon>ReporteBeneficiosSams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBeneficiosSams.aspx.designer.cs">
+      <DependentUpon>ReporteBeneficiosSams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCategoriasFavoritas.aspx.cs">
+      <DependentUpon>ReporteCategoriasFavoritas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteCategoriasFavoritas.aspx.designer.cs">
+      <DependentUpon>ReporteCategoriasFavoritas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteBitacoraValidacionesMembresia.aspx.cs">
+      <DependentUpon>ReporteBitacoraValidacionesMembresia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteBitacoraValidacionesMembresia.aspx.designer.cs">
+      <DependentUpon>ReporteBitacoraValidacionesMembresia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaMembresias_CuponClick.aspx.cs">
+      <DependentUpon>CargaMembresias_CuponClick.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaMembresias_CuponClick.aspx.designer.cs">
+      <DependentUpon>CargaMembresias_CuponClick.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartTicketCinemex.aspx.cs">
+      <DependentUpon>ReporteFoliosSmartTicketCinemex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartTicketCinemex.aspx.designer.cs">
+      <DependentUpon>ReporteFoliosSmartTicketCinemex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartTicketMC.aspx.cs">
+      <DependentUpon>ReporteFoliosSmartTicketMC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartTicketMC.aspx.designer.cs">
+      <DependentUpon>ReporteFoliosSmartTicketMC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSubscripcionNewsLetterPrana.aspx.cs">
+      <DependentUpon>ReporteSubscripcionNewsLetterPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSubscripcionNewsLetterPrana.aspx.designer.cs">
+      <DependentUpon>ReporteSubscripcionNewsLetterPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientesPrana.aspx.cs">
+      <DependentUpon>ReporteClientesPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteClientesPrana.aspx.designer.cs">
+      <DependentUpon>ReporteClientesPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCodigos.aspx.cs">
+      <DependentUpon>ReporteCodigos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteCodigos.aspx.designer.cs">
+      <DependentUpon>ReporteCodigos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEnvioCorreosVentaSAMS.aspx.cs">
+      <DependentUpon>ReporteEnvioCorreosVentaSAMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteEnvioCorreosVentaSAMS.aspx.designer.cs">
+      <DependentUpon>ReporteEnvioCorreosVentaSAMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteReferidosVentasSams.aspx.cs">
+      <DependentUpon>ReporteReferidosVentasSams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteReferidosVentasSams.aspx.designer.cs">
+      <DependentUpon>ReporteReferidosVentasSams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteReferidosSams.aspx.cs">
+      <DependentUpon>ReporteReferidosSams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteReferidosSams.aspx.designer.cs">
+      <DependentUpon>ReporteReferidosSams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCuponesEntregados.aspx.cs">
+      <DependentUpon>ReporteCuponesEntregados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteCuponesEntregados.aspx.designer.cs">
+      <DependentUpon>ReporteCuponesEntregados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCuponesRedimidos.aspx.cs">
+      <DependentUpon>ReporteCuponesRedimidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteCuponesRedimidos.aspx.designer.cs">
+      <DependentUpon>ReporteCuponesRedimidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFoliosBonnus.aspx.cs">
+      <DependentUpon>ReporteFoliosBonnus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFoliosBonnus.aspx.designer.cs">
+      <DependentUpon>ReporteFoliosBonnus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFoliosEdenred.aspx.cs">
+      <DependentUpon>ReporteFoliosEdenred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFoliosEdenred.aspx.designer.cs">
+      <DependentUpon>ReporteFoliosEdenred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartGift.aspx.cs">
+      <DependentUpon>ReporteFoliosSmartGift.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartGift.aspx.designer.cs">
+      <DependentUpon>ReporteFoliosSmartGift.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartTicket.aspx.cs">
+      <DependentUpon>ReporteFoliosSmartTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteFoliosSmartTicket.aspx.designer.cs">
+      <DependentUpon>ReporteFoliosSmartTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteImagenesCadenas.aspx.cs">
+      <DependentUpon>ReporteImagenesCadenas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteImagenesCadenas.aspx.designer.cs">
+      <DependentUpon>ReporteImagenesCadenas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteOperacionSucursales.aspx.cs">
+      <DependentUpon>ReporteOperacionSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteOperacionSucursales.aspx.designer.cs">
+      <DependentUpon>ReporteOperacionSucursales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePromocionesFavoritas.aspx.cs">
+      <DependentUpon>ReportePromocionesFavoritas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportePromocionesFavoritas.aspx.designer.cs">
+      <DependentUpon>ReportePromocionesFavoritas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteRedenciones.aspx.cs">
+      <DependentUpon>ReporteRedenciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteRedenciones.aspx.designer.cs">
+      <DependentUpon>ReporteRedenciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSucursalesEdenred.aspx.cs">
+      <DependentUpon>ReporteSucursalesEdenred.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSucursalesEdenred.aspx.designer.cs">
+      <DependentUpon>ReporteSucursalesEdenred.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSucursalesPrana.aspx.cs">
+      <DependentUpon>ReporteSucursalesPrana.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSucursalesPrana.aspx.designer.cs">
+      <DependentUpon>ReporteSucursalesPrana.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSucursalesSams.aspx.cs">
+      <DependentUpon>ReporteSucursalesSams.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteSucursalesSams.aspx.designer.cs">
+      <DependentUpon>ReporteSucursalesSams.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Resources\Apps\DataAcces\DALLealtad\DALLealtad.csproj">
+      <Project>{00f2b827-efa0-436e-b324-601f51d392ac}</Project>
+      <Name>DALLealtad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Resources\Plugins\WebServices\WebServices.csproj">
+      <Project>{caade002-4a8d-43d9-b049-125dd09b5824}</Project>
+      <Name>WebServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7208</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CentralAdministrativa_QA/Lealtad</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:7208/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
